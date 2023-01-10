@@ -13,7 +13,6 @@ st.set_page_config(page_title="Moormuseum Wasserpegel Dashboard", page_icon= ":t
 #st.set_page_config(page_title=None, page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 ##Header section
-st.subheader("We are in Moormuseum: :wave:")
 st.header("Grundwasser(GW) und Moorwasser(MW) Bestand Analyse")
 
 f="Moormuseum_logger_messdaten.xlsx"
