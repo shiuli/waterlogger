@@ -49,17 +49,26 @@ messstelle=df_selection["logger_code"].unique().tolist()
 
 chart_data=df_selection[["logger_code", "date", "muNN", "Temperatur"]]
 
+fig = px.bar(chart_data, x="date",
+        y="muNN", color="logger_code", barmode="group",
+            title= f"Wasser Logger daily müNN ")
 
-fig = px.bar(chart_data, x="logger_code",
+fig1 = px.line(chart_data, x="date",
+        y="muNN", color="logger_code",
+            title= f"Wasser Logger daily müNN ")
+
+fig2 = px.bar(chart_data, x="logger_code",
         y="muNN", color="logger_code", barmode="group", animation_frame="date", animation_group="logger_code",
             title= f"Wasser Logger daily müNN ")
-fig2 = px.scatter(chart_data, x="logger_code",
+fig3 = px.scatter(chart_data, x="logger_code",
         y="Temperatur", color="logger_code", range_y=[-5,23], animation_frame="date", animation_group="logger_code",
             title= f"Wasser Logger daily Temperatur ")
 
 
 st.plotly_chart(fig)
+st.plotly_chart(fig1)
 st.plotly_chart(fig2)
+st.plotly_chart(fig3)
 
 
 nr_ms=len(list(df_selection["logger_code"].unique()))
